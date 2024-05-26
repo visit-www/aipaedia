@@ -1,0 +1,27 @@
+/* Base styles */
+.container {
+	width: 90%; /* Example: Container width as 90% of the viewport */
+	margin: 0 auto; /* Center the container */
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+	/* Adjust styles for tablets and larger */
+	.container {
+		width: 80%; /* Example: Reduce container width for larger screens */
+	}
+}
+
+@media (min-width: 992px) {
+	/* Adjust styles for laptops and larger */
+	.container {
+		width: 70%; /* Example: Further reduce container width for larger screens */
+	}
+}
+
+@media (min-width: 1200px) {
+	/* Adjust styles for desktops and larger */
+	.container {
+		width: 60%; /* Example: Further reduce container width for larger screens */
+	}
+}

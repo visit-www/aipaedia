@@ -1,0 +1,10 @@
+/* CSS for the background image */
+body {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    /* Additional styles */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set height to full viewport height */
+}

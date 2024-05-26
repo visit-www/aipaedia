@@ -1,0 +1,10 @@
+/* Define the keyframes for the animation */
+@keyframes slide {
+    0% { transform: translateX(100%); } /* Start from right */
+    100% { transform: translateX(-100%); } /* End at left */
+}
+
+/* Apply the animation to the contact element */
+.contact p {
+    animation: slide 5s linear infinite; /* 5s duration, linear easing, infinite loop */
+}
