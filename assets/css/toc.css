@@ -48,14 +48,15 @@ body {
 	color: var(--secondary-green);
 	margin-bottom: 0.5em;
 	margin-top: 0;
-	padding: 0 1em o 1em;
+	padding: 0em 1em 0em 1em;
 }
 .contents {
 	font-family: 'Merriweather', serif;
 	font-size: 1.2em;
-	line-height: 1.6;
-	color: var(--primary-green);
+	line-height: 2em;
+	color: var(--highlight-yellow);
 	margin-bottom: 1em;
+    padding: 1.5em;
 }
 
 .links {
