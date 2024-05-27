@@ -1,0 +1,14 @@
+@keyframes typeWriter {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+.typewriter-animation {
+	overflow: hidden; /* Ensures text doesn't overflow */
+	white-space: nowrap; /* Ensures text doesn't wrap */
+	animation: typeWriter 1s steps(20, end); /* Adjust duration and steps as needed */
+}
