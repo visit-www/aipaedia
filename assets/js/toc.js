@@ -40,20 +40,38 @@ window.addEventListener('load', wrapDiv);
 // Call wrapDiv when the window is resized
 window.addEventListener('resize', wrapDiv);
 
+//function to add drop down functionality to the nav bar whne on small screens
+function shrunkNavbarBehavior() {
+	const dropBtn = document.querySelector('.dropbtn');
+	  if (dropBtn && !dropBtn.hasEventListener) {
+			dropBtn.addEventListener('click', () => {
+				navBar.classList.toggle('hide-element');
+				navBar.classList.toggle('shrink-navbar');
+				navBar.classList.toggle('nav-bar');
+				dropBtn.classList.toggle('inactive-menu-button');
+				modules.classList.add('hide-element');
+			});
+			dropBtn.hasEventListener = true;
+		}
+}
+
 // Ensure dropBtn is only added if it exists
 window.addEventListener('load', () => {
-	const dropBtn = document.querySelector('.dropbtn');
-	if (dropBtn) {
-		dropBtn.addEventListener('click', () => {
-			navBar.classList.toggle('hide-element');
-			navBar.classList.toggle('shrink-navbar');
-			navBar.classList.toggle('nav-bar');
-			dropBtn.classList.toggle('inactive-menu-button');
-			modules.classList.add('hide-element');
-		});
-	}
+	shrunkNavbarBehavior();
 });
-
+//Ensure same behavior happens even when the windoe is resized rather loaded.
+window.addEventListener('resize', () => {
+	shrunkNavbarBehavior();
+});
+//add event listeners for collpasing the modules dropdown.
 modulesButton.addEventListener('click', () => {
 	modules.classList.toggle('hide-element');
+});
+//function to collapse navbar
+
+//add event listner to viewing window except on nav bar to collaspe modules
+document.addEventListener('click', function (event) {
+	if (!navBar.contains(event.target)) {
+		modules.classList.add('hide-element');
+	}
 });

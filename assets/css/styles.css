@@ -13,6 +13,7 @@ canvas {
 a {
 	text-decoration: none;
 	color: white;
+	display:inline-block;
 }
 /*Style body element */
 body {
@@ -28,7 +29,9 @@ body {
 	height: 100vh; /* Set height to 100% for both html and body */
 	background: black; /* Background color */
 }
-
+main{
+	flex-wrap: wrap;
+}
 header {
 	display: flex;
 	width: 100%;

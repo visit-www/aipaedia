@@ -91,32 +91,40 @@ body {
 }
 
 .container {
-	max-width: 800px;
+	max-width: 90%;
 	margin: 0 auto;
 }
 .nav-bar {
 	margin: 20px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 }
+
 .modules-dropdown {
-	width: 30%;
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: 20px;
 }
-.modules {
-	width: 100%;
-}
+
 .navitems {
 	margin-right: 10px;
 	margin-bottom: 8px;
-	width: 30%;
+	min-width: 75px;
+	flex-basis: 1;
 }
 .moduleitem {
-	width: 30%;
+	min-width: 95px;
+	margin-right: 10%;
+}
+a {
+	text-decoration: none;
+	display: flex;
 }
 button {
+	display: flex;
 	padding: 10px;
-	width: 30%;
+	width: 100%;
 	background-color: var(--highlight-yellow);
 	color: var(--black);
 	border-radius: 8px;
@@ -130,12 +138,13 @@ button:active {
 	background-color: var(--dark-yellow);
 }
 .modules-dropdown-contents {
-	display: inline-block;
-	position: relative;
-	text-align: center;
-	flex-flow: wrap;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	flex-flow: nowrap;
 	padding: 8px;
 	margin-bottom: 8px;
+	margin-right: 8px;
 	font-size: 0.8em;
 	border-radius: 8px;
 }
@@ -143,14 +152,6 @@ button:active {
 .hide-element {
 	display: none;
 }
-@media(max-width:1031px) {
-	button {
-		width: 30%;
-	}
-	.moduleitem {
-		width: 44%;
-	}}
-
 
 @media (max-width: 757px) {
 	body {
@@ -174,7 +175,8 @@ button:active {
 		padding: 0.5em;
 	}
 	button {
-		width: 30%;
+		width: 100%;
+		flex: 1;
 	}
 	.moduleitem {
 		width: 100%;
@@ -182,6 +184,8 @@ button:active {
 }
 .dropbtn {
 	margin-top: 10px;
+	display: flex;
+	justify-content: center;
 }
 .shrink-navbar {
 	font-size: 0.8em;
