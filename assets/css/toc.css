@@ -43,8 +43,8 @@ body {
 /* Style spacious lists. */
 .spaced-list {
 	font-family: 'Merriweather', serif;
-	font-size: 1.8em;
-	line-height: 3em;
+	font-size: 1.3em;
+	line-height: 2em;
 	color: var(--dark-yellow);
 	margin-bottom: 1em;
 	padding: 1.5em;
@@ -231,6 +231,14 @@ button:active {
 	.moduleitem {
 		width: 100%;
 	}
+	.spaced-list {
+		font-family: 'Merriweather', serif;
+		font-size: 1em;
+		line-height: 1.5em;
+		color: var(--dark-yellow);
+		margin-bottom: 1em;
+		padding: 1.5em;
+	}
 }
 
 .dropbtn {
@@ -291,23 +299,9 @@ button:active {
 .objectives-list li {
 	display: block;
 	overflow: hidden; /* Ensures text doesn't overflow */
-	white-space: nowrap; /* Ensures text doesn't wrap */
+	white-space: wrap; /* Ensures text doesn't wrap */
 	visibility: hidden;
-	animation: typeWriter 5s steps(150, end); /* Adjust duration and steps as needed */
+	animation: typeWriter 1s steps(20, end); /* Adjust duration and steps as needed */
 	animation-fill-mode: forwards; /* Ensures the animation stays at the end state */
 }
-.objectives-list li:nth-child(1) {
-	animation-delay: 0s;
-}
-.objectives-list li:nth-child(2) {
-	animation-delay: 1s;
-}
-.objectives-list li:nth-child(3) {
-	animation-delay: 3s;
-}
-.objectives-list li:nth-child(4) {
-	animation-delay: 5s;
-}
-.objectives-listli:nth-child(5) {
-	animation-delay: 7s;
-}
+
