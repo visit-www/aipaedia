@@ -1,3 +1,6 @@
+/* Define basic style for list items,paragraphs, titles and sub-titles§ and
+buttons and links */
+
 /* Color Palette */
 :root {
 	--primary-green: #469242;
@@ -8,15 +11,58 @@
 	--deep-purple: #312a3a;
 }
 
-/* Fonts */
+/* Fonts and background */
 body {
 	font-family: 'Merriweather', serif; /* For body text */
 	font-family: 'Lato', sans-serif; /* For headings */
 	background-color: var(--black);
 	margin: 0;
-	padding: 0;
+	padding: 50px;
 }
-/* style header tiems */
+/* Style headings */
+.heading {
+	font-family: 'Lato', sans-serif;
+	color: var(--highlight-yellow);
+	font-size: 1em;
+}
+/* Style sub-headings  */
+.sub-heading {
+	font-family: 'Merriweather', serif;
+	color: var(--secondary-green);
+	font-size: 0.8em;
+}
+
+/* Style usual paragraph texts. This class has not been yet used.*/
+.paragraph-text {
+	font-family: 'Merriweather', serif;
+	font-size: 1.5em;
+	line-height: 1.7em;
+	color: var(--dark-yellow);
+	margin-bottom: 1em;
+}
+/* Style spacious lists. */
+.spaced-list {
+	font-family: 'Merriweather', serif;
+	font-size: 1.8em;
+	line-height: 3em;
+	color: var(--dark-yellow);
+	margin-bottom: 1em;
+	padding: 1.5em;
+}
+/* Style usual text */
+.usual-text {
+	font-family: 'Merriweather', serif;
+	font-size: 1em;
+	line-height: 1.2;
+	color: var(--black);
+}
+/*Style highlighted text */
+.highlighted-text {
+	background-color: #ffcb02;
+	color: black !important;
+}
+
+/* Style header items */
 .head {
 	display: flex;
 	flex-direction: column;
@@ -25,6 +71,7 @@ body {
 	padding: 0;
 	margin: 0;
 }
+/*Style title container */
 .title-container {
 	display: flex;
 	flex-direction: row;
@@ -33,9 +80,7 @@ body {
 	margin: auto;
 	padding: 0;
 }
-.iconimg {
-	width: 4em;
-}
+
 .main-title {
 	display: flex;
 	justify-content: center;
@@ -55,25 +100,34 @@ body {
 	margin-top: 0;
 	padding: 0em 1em 0em 1em;
 }
-.contents {
-	font-family: 'Merriweather', serif;
-	font-size: 1.8em;
-	line-height: 3em;
-	color: var(--highlight-yellow);
-	margin-bottom: 1em;
-	padding: 1.5em;
+
+/* Style icons images */
+.iconimg {
+	width: 4em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.links {
+/*style links and anchor items */
+a {
 	font-family: 'Merriweather', serif;
 	font-size: 1em;
-	color: var(--highlight-yellow);
 	text-decoration: none;
+	display: flex;
+	transition: transform 0.5s ease-in-out; /* Smooth transition effect */
 }
 
-.links:hover {
-	text-decoration: underline;
+/* Style anchor item behavor */
+a:hover {
+	transform: scale(1.05);
+	padding: 10px 0px 10px 0px;
 }
+
+a:active {
+	transform: scale(0.5);
+}
+/* Style equations */
 
 .equation {
 	font-family: 'Courier New', monospace;
@@ -85,15 +139,29 @@ body {
 	display: inline-block;
 }
 
-/* Additional Styles */
-body {
-	padding: 20px;
+/* Style buttons */
+
+button {
+	display: flex;
+	padding: 10px;
+	width: 100%;
+	background-color: var(--highlight-yellow);
+	color: var(--black);
+	border-radius: 8px;
+	transition: transform 0.3s ease;
 }
 
-.container {
-	max-width: 90%;
-	margin: 0 auto;
+button:hover {
+	transform: scale(1.05);
 }
+
+button:active {
+	transform: scale(0.8);
+	background-color: var(--dark-yellow);
+}
+
+/*  Style Navigation bar  */
+
 .nav-bar {
 	margin: 20px;
 	display: flex;
@@ -113,30 +181,12 @@ body {
 	min-width: 75px;
 	flex-basis: 1;
 }
+
 .moduleitem {
 	min-width: 95px;
 	margin-right: 10%;
 }
-a {
-	text-decoration: none;
-	display: flex;
-}
-button {
-	display: flex;
-	padding: 10px;
-	width: 100%;
-	background-color: var(--highlight-yellow);
-	color: var(--black);
-	border-radius: 8px;
-	transition: transform 0.3s ease;
-}
-button:hover {
-	transform: scale(1.05);
-}
-button:active {
-	transform: scale(0.8);
-	background-color: var(--dark-yellow);
-}
+
 .modules-dropdown-contents {
 	display: flex;
 	flex-direction: row;
@@ -152,7 +202,7 @@ button:active {
 .hide-element {
 	display: none;
 }
-
+/* Add media queries to make navigation bar responsive */
 @media (max-width: 757px) {
 	body {
 		padding: 0;
@@ -182,11 +232,13 @@ button:active {
 		width: 100%;
 	}
 }
+
 .dropbtn {
 	margin-top: 10px;
 	display: flex;
 	justify-content: center;
 }
+
 .shrink-navbar {
 	font-size: 0.8em;
 	width: 100%;
@@ -195,6 +247,67 @@ button:active {
 	position: relative;
 	padding: 0.5em;
 }
+
 .inactive-menu-button {
 	background-color: #312a3a;
+}
+
+/* Animations */
+@keyframes grow {
+	0% {
+		transform: scale(0.2); /* Start with 20% of original size */
+	}
+	100% {
+		transform: scale(1); /* End with 100% of original size */
+	}
+}
+@keyframes shrink {
+	0% {
+		transform: scale(1.3); /* Start with 50% of original size */
+	}
+	100% {
+		transform: scale(1); /* End with 150% of original size */
+	}
+}
+
+@keyframes typeWriter {
+	from {
+		width: 0;
+		visibility: visible; /* Make text visible when animation starts */
+	}
+	to {
+		width: 100%;
+		visibility: visible; /* Make text visible when animation starts */
+	}
+}
+
+/* Apply the animations */
+.main-title,
+.iconimg,
+.sub-title {
+	animation: grow 2s ease-out; /* 0.5s duration, ease easing */
+}
+
+.objectives-list li {
+	display: block;
+	overflow: hidden; /* Ensures text doesn't overflow */
+	white-space: nowrap; /* Ensures text doesn't wrap */
+	visibility: hidden;
+	animation: typeWriter 5s steps(150, end); /* Adjust duration and steps as needed */
+	animation-fill-mode: forwards; /* Ensures the animation stays at the end state */
+}
+.objectives-list li:nth-child(1) {
+	animation-delay: 0s;
+}
+.objectives-list li:nth-child(2) {
+	animation-delay: 1s;
+}
+.objectives-list li:nth-child(3) {
+	animation-delay: 3s;
+}
+.objectives-list li:nth-child(4) {
+	animation-delay: 5s;
+}
+.objectives-listli:nth-child(5) {
+	animation-delay: 7s;
 }
